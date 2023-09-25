@@ -1,3 +1,20 @@
-.hello {
-    color: red;
+* {
+    padding:0;
+    margin:0;
+ }
+
+:root {
+    --dark-red: #8e0e00;
+    --primary-dark: #1f1c18;
+    --white: #FFFFFF; 
+} 
+
+header {
+    background: linear-gradient(90deg, var(--dark-red), var(--primary-dark));
+    color: var(--white);
+    padding: 1rem 6rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
 }
