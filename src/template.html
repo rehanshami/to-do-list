@@ -9,10 +9,15 @@
 </head>
 <body>
     <header>
-        <i class="fas fa-check-double"></i>
-        <h2>ToDo</h2>
+        <div class="toggle-menu">
+            <div class="burger-line"></div>
+            <div class="burger-line"></div>
+            <div class="burger-line"></div>
+        </div>
+            <i class="fas fa-check-double logo"></i>
+            <h2>ToDo</h2>
     </header>
-    <nav>
+    <nav class="side-bar">
         <div class="tasks-by-date">
             <ul>
                 <li><i class="fa-solid fa-calendar-days"></i><p>All</p></li>
@@ -23,17 +28,40 @@
             </ul>
         </div>
         <div class="projects">
-            <div class="projects-title"><p>Projects</p><i class="fa-solid fa-circle-plus"></i></div>
+            <div class="projects-title"><p>Projects</p><i class="fa-solid fa-circle-plus projects-icon"></i></div>
             <div class="projects-nav">
                 <div class="projects-item">
                     <ul>
-                        <li>Sample project 1</li>
-                        <li>Sample project 2</li>
-                        <li>Sample project 3</li>
+                        <li>Sample project 1 <div class="icons"><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash-can"></i></div></li>
+                        <li>Sample project 2 <div class="icons"><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash-can"></i></div></li>
+                        <li>Sample project 3 <div class="icons"><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash-can"></i></div></li>
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
+    <div class="project-form">
+        <h2>Add project</h2>
+        <form action="">
+            <ul>
+                <li>
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title">
+                </li>
+                <li>
+                    <label for="category">Category</label>
+                    <select name="category" id="category">
+                        <option value="gym">Gym</option>
+                        <option value="work">Work</option>
+                        <option value="study">Study</option>
+                    </select>
+                </li>
+            </ul>
+            <div class="form-buttons">
+                <button>Cancel</button>
+                <button>Add</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

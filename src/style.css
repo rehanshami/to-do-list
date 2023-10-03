@@ -14,25 +14,68 @@
     --white: #FFFFFF;
     --light-grey: #F7F7F7;
     --dark-grey: #757575;
+    --grey: #e6e6e6;
 } 
 
 header {
     background: linear-gradient(90deg, var(--dark-red), var(--primary-dark));
     color: var(--white);
-    padding: 1rem 6rem;
+    padding: 1rem 2rem;
     display: flex;
     align-items: center;
     gap: 1rem;
     font-size: 1.5rem;
 }
 
-nav {
+
+
+.toggle-menu {
+    display: none;
+    height: 30px;
+    width: 30px;
+    margin-left: 22px;
+    margin-right: 22px;
+    color: var(--white);
+    cursor: pointer;
+    background-color: #1f1c18;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 7px 4px 3px 4px;
+}
+
+.burger-line {
+    height: 3px;
+    margin-bottom: 3px;
+    background-color: var(--white);
+    transition: all 0.4s ease;
+
+}
+
+.toggle-menu.active .burger-line:nth-child(1) {
+    transform: rotate(-45deg) translate(-4px, 5px);
+}
+
+.toggle-menu.active .burger-line:last-child {
+    transform: rotate(45deg) translate(-4px, -5px);
+}
+
+.toggle-menu.active .burger-line:nth-child(2) {
+    opacity: 0;
+}
+
+
+.side-bar {
     width: 300px;
     background-color: var(--light-grey);
     height: 100%;
     position: fixed;
     overflow: auto;
     padding: 50px 20px;
+    transition: all 0.4s ease;
+}
+
+.side-bar.show-side-bar {
+    transform: translateX(0px);
 }
 
 .tasks-by-date {
@@ -68,4 +111,80 @@ nav {
     border-bottom: 1px solid var(--dark-grey);
     padding: 10px 20px;
     margin-bottom: 1.5rem;
+}
+
+.projects-item li {
+    display: flex;
+    justify-content: space-between;
+}
+.projects-item li .icons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+@media (max-width: 1000px) {
+    .toggle-menu {
+        display: block;
+    }
+
+    .side-bar {
+        transform: translateX(-300px);
+    }
+
+}
+
+.project-form {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    max-width: 350px;
+}
+
+.project-form h2 {
+    background: linear-gradient(90deg, var(--dark-red), var(--primary-dark));
+    color: var(--white);
+    padding: 10px 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+form {
+    padding: 20px;
+}
+form ul > li {
+    margin-bottom: 0.8rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-form label {
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--dark-grey);
+}
+
+form input, form select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid var(--grey);
+    background-color: var(--white);
+}
+
+input:focus, select:focus {
+    border-color: var(--dark-red);
+    transition: 0.3s;
+}
+
+input:focus,
+button:focus,
+textarea:focus,
+select:focus {
+  outline: none;
 }

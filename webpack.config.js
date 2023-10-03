@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
 module.exports = {
@@ -6,8 +7,11 @@ module.exports = {
   devtool: 'inline-source-map',
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Output Management',
-    })
+      title: 'To do list app',
+      filename: 'index.html',
+      template: 'src/template.html',
+    }),
+    new MiniCssExtractPlugin({ filename: "style.css" }),
   ],
   output: {
     filename: 'main.js',
@@ -18,19 +22,15 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+        ],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
-    ]
+    ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Webpack App',
-      filename: 'index.html',
-      template: 'src/template.html',
-    }),
-  ],
 };
