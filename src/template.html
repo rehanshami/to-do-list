@@ -31,7 +31,7 @@
             <div class="projects-title"><p>Projects</p><i class="fa-solid fa-circle-plus projects-icon"></i></div>
             <div class="projects-nav">
                 <div class="projects-item">
-                    <ul>
+                    <ul class="project-list">
                         <li>Sample project 1 <div class="icons"><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash-can"></i></div></li>
                         <li>Sample project 2 <div class="icons"><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash-can"></i></div></li>
                         <li>Sample project 3 <div class="icons"><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash-can"></i></div></li>
@@ -58,10 +58,35 @@
                 </li>
             </ul>
             <div class="form-buttons">
-                <button>Cancel</button>
-                <button>Add</button>
+                <button class="cancel" id="cancel">Cancel</button>
+                <button class="confirm" id="add">Add</button>
             </div>
         </form>
     </div>
+    <main class="main">
+        <div class="main-projects"><h2 class="project-title">Example title</h2></div>
+        
+        <div class="tasks-div">
+            <div class="tasks-title">
+                <p>Tasks (<span class="tasks-count">2</span>)</p>
+            </div>
+            <div class="tasks-list">
+                <div class="task-div">
+                    <div class="task-text">This is my first task</div>
+                    <div class="task-actions">
+                        <p class="due-date">2023-12-12</p>
+                        <i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash-can"></i>
+                    </div>
+                </div>
+                <div class="task-div">
+                    <div class="task-text">This is my second task</div>
+                    <div class="task-actions">
+                        <p class="due-date">2023-12-12</p>
+                        <i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash-can"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

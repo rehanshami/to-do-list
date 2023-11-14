@@ -1,9 +1,24 @@
 import 'normalize.css';
 import './style.css';
-import toggleMenu from './dom';
+import { toggleProjectForm, toggleMenu, toggleProjectFormListener} from './dom';
 import Task from './todo';
+import { updateProjectDOM } from './dom';
+import { addProjectListener, cancelProjectListener, responsiveMenu, selectProjectListener } from './dom';
+
+window.addEventListener('resize', responsiveMenu);
+
+
+window.Task = Task;
 
 toggleMenu();
+
+
+
+toggleProjectFormListener();
+
+addProjectListener();
+selectProjectListener();
+cancelProjectListener();
 
 console.log('hello world');
 
